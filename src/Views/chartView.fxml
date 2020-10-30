@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="553.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChartController">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="772.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane layoutX="45.0" layoutY="56.0" prefHeight="415.0" prefWidth="442.0">
+         <children>
+            <StackedAreaChart fx:id="stackedAreaChartForEpidemics" layoutX="10.0" layoutY="7.0" prefHeight="415.0" prefWidth="599.0">
+              <xAxis>
+                <NumberAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </StackedAreaChart>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

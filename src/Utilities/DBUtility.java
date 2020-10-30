@@ -1,3 +1,7 @@
+package Utilities;
+
+import Models.Epidemic;
+
 import java.sql.*;
 
 public class DBUtility {
@@ -14,7 +18,7 @@ public class DBUtility {
 
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment", user, password);
-            String sql = "SELECT * FROM epidemics";
+            String sql = "SELECT * FROM epidemics2";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -46,7 +50,7 @@ public class DBUtility {
 
 
     /**
-     * Adds Epidemic to the database
+     * Adds Models.Epidemic to the database
      * @param newEpidemic
      * @return id
      */
