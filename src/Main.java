@@ -31,16 +31,14 @@ public class Main extends Application{
         public void start(Stage stage) throws Exception {
             Parent root = FXMLLoader.load(getClass()
                    .getResource("Views/chartView.fxml"));
-           Scene scene = new Scene(root);
+            Scene scene = new Scene(root);
             scene.getStylesheets().add("Views/styles.css");
             stage.setScene(scene);
-
-
             Image icon = new Image("/virus.png");
             stage.getIcons().add(icon);
-            stage.setTitle("Worst epidemic comparison");
-
+            stage.setTitle("Worst epidemics comparison");
             stage.show();
+
 
 
         }
