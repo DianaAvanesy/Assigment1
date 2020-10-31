@@ -6,18 +6,9 @@
 
 <AnchorPane prefHeight="553.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ChartController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="772.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <AnchorPane layoutX="45.0" layoutY="56.0" prefHeight="415.0" prefWidth="442.0">
+      <AnchorPane fx:id="chartArea" layoutX="162.0" layoutY="-7.0" prefHeight="566.0" prefWidth="613.0">
          <children>
-            <StackedAreaChart fx:id="stackedAreaChartForEpidemics" layoutX="10.0" layoutY="7.0" prefHeight="415.0" prefWidth="599.0">
+            <StackedAreaChart fx:id="stackedAreaChartForEpidemics" layoutY="29.0" prefHeight="415.0" prefWidth="599.0">
               <xAxis>
                 <NumberAxis side="BOTTOM" />
               </xAxis>
@@ -27,5 +18,6 @@
             </StackedAreaChart>
          </children>
       </AnchorPane>
+      <Button fx:id="changeSceneButton" layoutX="24.0" layoutY="486.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="View Table" />
    </children>
 </AnchorPane>

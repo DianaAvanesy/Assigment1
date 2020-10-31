@@ -5,11 +5,11 @@ public class Epidemic {
     private String title, dateRange, location, disease, deathToll;
 
     public Epidemic(String title, String dateRange, String location, String disease, String deathToll) {
-        this.title = title;
-        this.dateRange = dateRange;
-        this.location = location;
-        this.disease = disease;
-        this.deathToll = deathToll;
+        setTitle(title);
+        setDateRange(dateRange);
+        setLocation(location);
+        setDisease(disease);
+        setDeathToll(deathToll);
         //try {
           //  int id = Utilities.DBUtility.insertNewEpidemic(this);
            // setId(id);
@@ -24,7 +24,10 @@ public class Epidemic {
     }
 
     public void setId(int id) {
-        this.id = id;
+       //if(id.matches("^[0-9]*$")){
+       //     this.id = id;
+       // }
+
     }
 
     public String getTitle() {
@@ -50,7 +53,7 @@ public class Epidemic {
             //get the number
         }
         else{
-            //just ignore the
+            //just ignore
         }
     }
 

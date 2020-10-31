@@ -1,0 +1,19 @@
+.root{
+    -fx-background-color: #431e43;
+
+}
+
+#chartArea{
+    -fx-background-color: white;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+#changeSceneButton{
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+    -fx-opacity: 0.9;
+
+}
