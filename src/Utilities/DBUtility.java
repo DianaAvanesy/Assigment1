@@ -1,6 +1,8 @@
 package Utilities;
 
 import Models.Epidemic;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.*;
 
@@ -9,10 +11,49 @@ public class DBUtility {
     private static String password = "a368G2Gvnl6LI8N975aZFYG";
 
     /**
+     * Function that returns list of all epidemics from the database
+     * @return ObservableList<Epidemic>
+     */
+    public static ObservableList<Epidemic> getAllEpidemics(){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ObservableList<Epidemic> epidemics = FXCollections.observableArrayList();
+
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment", user, password);
+            String sql = "SELECT * FROM epidemics2";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next())
+            {
+                int id = rs.getInt("id");
+                String name = rs.getString("EventName");
+                String dateRange = rs.getString("DateRange");
+                String location = rs.getString("Location");
+                String disease = rs.getString("Disease");
+                String deathTollEstimate = rs.getString("DeathTollEstimate");
+                epidemics.add(new Epidemic(name,dateRange,location,disease,deathTollEstimate));
+            }
+
+            st.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return epidemics;
+
+
+    }
+
+
+
+
+    /**
      * Function that prints to the console list of all epidemics from the database
      * @prints All of the epidemics
      */
-    public static void getAllEpidemics(){
+    public static void printAllEpidemics(){
         Connection conn = null;
         PreparedStatement ps = null;
 

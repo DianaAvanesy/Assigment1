@@ -10,13 +10,6 @@ public class Epidemic {
         setLocation(location);
         setDisease(disease);
         setDeathToll(deathToll);
-        //try {
-          //  int id = Utilities.DBUtility.insertNewEpidemic(this);
-           // setId(id);
-        //}
-        //catch (SQLException e){
-         //   e.printStackTrace();
-        //}
     }
 
     public int getId() {
@@ -24,9 +17,6 @@ public class Epidemic {
     }
 
     public void setId(int id) {
-       //if(id.matches("^[0-9]*$")){
-       //     this.id = id;
-       // }
 
     }
 
@@ -44,17 +34,20 @@ public class Epidemic {
 
     // The date range might or might not be an integer.
     public void setDateRange(String dateRange) {
+
+        this.dateRange = dateRange;
+
         // check if the date in the range of 400 - 2020
-        if(dateRange.matches("^([1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)$")){
+        //if(dateRange.matches("^([1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)$")){
             // set the date
-            this.dateRange = dateRange;
-        }
-        else if (dateRange.matches("^([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)-([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)")){
+         //   this.dateRange = dateRange;
+        //}
+        //else if (dateRange.matches("^([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)-([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)")){
             //get the number
-        }
-        else{
+        //}
+        //else{
             //just ignore
-        }
+        //}
     }
 
     public String getLocation() {

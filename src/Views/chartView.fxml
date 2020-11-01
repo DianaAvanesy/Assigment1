@@ -10,19 +10,19 @@
    <children>
       <AnchorPane fx:id="chartArea" layoutX="162.0" layoutY="-7.0" prefHeight="566.0" prefWidth="613.0">
          <children>
-            <StackedAreaChart fx:id="stackedAreaChartForEpidemics" layoutY="29.0" prefHeight="415.0" prefWidth="599.0">
-              <xAxis>
-                <NumberAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </StackedAreaChart>
             <Button fx:id="changeSceneButton" layoutX="239.0" layoutY="469.0" mnemonicParsing="false" onAction="#changeToListView" prefHeight="40.0" prefWidth="120.0" text="View Table">
                <font>
                   <Font name="Century Schoolbook" size="12.0" />
                </font>
             </Button>
+            <BubbleChart fx:id="epidemicsBubbleChart" layoutX="57.0" layoutY="61.0">
+              <xAxis>
+                <NumberAxis layoutX="2020.0" side="BOTTOM" fx:id="xAxis" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yAxis" side="LEFT" />
+              </yAxis>
+            </BubbleChart>
          </children>
       </AnchorPane>
       <ImageView blendMode="OVERLAY" fitHeight="264.0" fitWidth="288.0" layoutX="-120.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">

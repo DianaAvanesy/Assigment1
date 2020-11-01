@@ -18,3 +18,7 @@
     -fx-opacity: 0.9;
 
 }
+.TableView{
+    -fx-fixed-cell-size: 0;
+}
+

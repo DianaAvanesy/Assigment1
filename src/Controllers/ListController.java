@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static Utilities.DBUtility.getAllEpidemics;
+
 
 public class ListController implements Initializable {
 
@@ -61,7 +63,7 @@ public class ListController implements Initializable {
         deathTollColoumn.setCellValueFactory(new PropertyValueFactory<Epidemic, String>("deathToll"));
 
         //load data
-        epidemicsTableView.setItems(getEpidemicsList());
+        epidemicsTableView.setItems(getAllEpidemics());
     }
 
     public ObservableList<Epidemic> getEpidemicsList(){
