@@ -5,10 +5,13 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListController">
    <children>
-      <TableView fx:id="epidemicsTableView" layoutX="25.0" layoutY="31.0" prefHeight="432.0" prefWidth="735.0">
+      <TableView fx:id="epidemicsTableView" layoutX="26.0" layoutY="31.0" prefHeight="432.0" prefWidth="735.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="titleColoumn" prefWidth="147.0" text="Name" />
+          <TableColumn fx:id="dateRangeColoumn" prefWidth="131.0" text="Date Range" />
+            <TableColumn fx:id="locationColoumn" minWidth="0.0" prefWidth="167.0" text="Location" />
+            <TableColumn fx:id="diseaseColoumn" prefWidth="163.0" text="Disease" />
+            <TableColumn fx:id="deathTollColoumn" prefWidth="125.0" text="Death Toll" />
         </columns>
       </TableView>
       <Button fx:id="changeSceneButton" layoutX="323.0" layoutY="485.0" mnemonicParsing="false" onAction="#goBackToChart" prefHeight="36.0" prefWidth="140.0" text="Go Back" />
