@@ -1,5 +1,6 @@
 
 //import com.sun.prism.Image;
+import Views.SceneAndStage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,6 +32,9 @@ public class Main extends Application{
         public void start(Stage stage) throws Exception {
             Parent root = FXMLLoader.load(getClass()
                    .getResource("Views/chartView.fxml"));
+
+
+
             Scene scene = new Scene(root);
             scene.getStylesheets().add("Views/styles.css");
             stage.setScene(scene);
