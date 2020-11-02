@@ -65,7 +65,7 @@ public class ListController implements Initializable {
        //creates list with epidemics based on the query
         ObservableList<Epidemic> epidemicsList = null;
         try {
-            epidemicsList = DBUtility.getAllEpidemics("SELECT * FROM epidemics2 ");
+            epidemicsList = DBUtility.getAllEpidemics("SELECT * FROM epidemics ");
         }
         catch(SQLException e){
             e.printStackTrace();

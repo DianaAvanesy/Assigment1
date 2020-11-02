@@ -58,7 +58,7 @@ public class ChartController implements Initializable  {
         // saves all of the pandemics that the query will return
         ObservableList<Epidemic> epidemicsList = null;
         try {
-            epidemicsList = DBUtility.getAllEpidemics("select * from assigment.epidemics2 where DeathTollEstimate >=1000000 order by StartDate ");
+            epidemicsList = DBUtility.getAllEpidemics("select * from epidemics where DeathTollEstimate >=1000000 order by StartDate ");
         }
         catch(SQLException e){
             e.printStackTrace();

@@ -7,8 +7,8 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 
 public class DBUtility {
-    private static String user="root";
-    private static String password = "a368G2Gvnl6LI8N975aZFYG";
+    private static String user="student1";
+    private static String password = "student1";
 
     /**
      * Function that returns list of all epidemics (as objects) from the database based on the query provided as a parameter
@@ -22,7 +22,7 @@ public class DBUtility {
         ObservableList<Epidemic> epidemics = FXCollections.observableArrayList();
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment", user, password);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment1", user, password);
             String sql =  query;
              st = conn.createStatement();
              rs = st.executeQuery(sql);
@@ -67,8 +67,8 @@ public class DBUtility {
         ResultSet rs = null;
 
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment", user, password);
-            String sql = "SELECT * FROM epidemics2";
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment1", user, password);
+            String sql = "SELECT * FROM epidemics";
              st = conn.createStatement();
              rs = st.executeQuery(sql);
 
