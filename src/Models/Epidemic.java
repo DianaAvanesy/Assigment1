@@ -13,9 +13,7 @@ public class Epidemic {
         setDeathToll(deathToll);
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public void setId(int id) {
         this.id = id;
@@ -25,12 +23,18 @@ public class Epidemic {
         return startDate;
     }
 
+    /**
+     * Sets the Start Date if its between 50 and 2020
+     * @param startDate
+     * @trows IllegalArgumentException
+     */
     public void setStartDate(int startDate) {
-        this.startDate = startDate;
+        if(startDate>50 && startDate<=2020 ) {
+            this.startDate = startDate;
+        }
+        else
+            throw new IllegalArgumentException("Start day should be in 50-2020 range. Not: " + startDate);
     }
-
-
-
 
     public String getTitle() {
         return title;
@@ -44,22 +48,12 @@ public class Epidemic {
         return dateRange;
     }
 
-    // The date range might or might not be an integer.
+    /**
+     * Method sets the DateRange with the String value. Because of the many formats dateRange represented in the original data set this field just for the table representation of the range.
+     * @param dateRange
+     */
     public void setDateRange(String dateRange) {
-
         this.dateRange = dateRange;
-
-        // check if the date in the range of 400 - 2020
-        //if(dateRange.matches("^([1-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)$")){
-            // set the date
-         //   this.dateRange = dateRange;
-        //}
-        //else if (dateRange.matches("^([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)-([4-8][0-9]{2}|9[0-8][0-9]|99[0-9]|1[0-9]{3}|20[01][0-9]|2020)")){
-            //get the number
-        //}
-        //else{
-            //just ignore
-        //}
     }
 
     public String getLocation() {
@@ -79,13 +73,19 @@ public class Epidemic {
     }
 
     public int getDeathToll() {
-
-        //should be an integer
-        //
         return deathToll;
     }
 
+    /**
+     * Method sets deathToll if the number >0, otherwise thows IllegalArgumentException
+     * @param deathToll
+     * @throws IllegalArgumentException
+     */
     public void setDeathToll(int deathToll) {
-        this.deathToll = deathToll;
+        if(deathToll>0) {
+            this.deathToll = deathToll;
+        }
+        else
+            throw new IllegalArgumentException("Start day should be more then 0. Not: " + deathToll);
     }
 }

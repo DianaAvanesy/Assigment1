@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/**
+ * Class created to illuminate duplication of the code related to setting the Scene
+ */
 public class SceneAndStage {
 
     public static void setScene(ActionEvent event, Parent root) {

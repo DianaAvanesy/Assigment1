@@ -13,12 +13,31 @@
 
 #changeSceneButton{
     -fx-font-weight: bold;
-    -fx-font-size: 14;
-    -fx-font-family: "Century Schoolbook";
+    -fx-font-size: 11;
+    -fx-font-family: "Arial Black";
     -fx-opacity: 0.9;
+}
+
+#titleLabel{
+
+    -fx-font-size: 35;
+    -fx-font-family: "Century Schoolbook";
 
 }
 .TableView{
     -fx-fixed-cell-size: 0;
 }
 
+.default-color0.chart-bar { -fx-bar-fill: #460364; }
+
+
+.table-view .column-header{
+
+    -fx-background-radius: 7;
+    -fx-pref-height: 30;
+
+}
+
+.table-view .column-header-background{
+    -fx-background-color: transparent;
+}
