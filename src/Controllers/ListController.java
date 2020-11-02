@@ -69,7 +69,7 @@ public class ListController implements Initializable {
     public ObservableList<Epidemic> getEpidemicsList(){
         ObservableList<Epidemic> epidemics = FXCollections.observableArrayList();
 
-        epidemics.add(new Epidemic("Title goes here","2323-1432", "Kiev","Coroa","24994"));
+        epidemics.add(new Epidemic("Title goes here","1432", 7,"Kiev","Coroa",24994));
 
         return epidemics;
     }

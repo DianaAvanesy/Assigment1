@@ -21,7 +21,7 @@ public class DBUtility {
 
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/assigment", user, password);
-            String sql = "SELECT * FROM epidemics2";
+            String sql = "select * from epidemics2 WHERE DeathTollEstimate >=1000000";//"SELECT  FROM epidemics2 ";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -30,10 +30,11 @@ public class DBUtility {
                 int id = rs.getInt("id");
                 String name = rs.getString("EventName");
                 String dateRange = rs.getString("DateRange");
+                int startDate = rs.getInt("StartDate");
                 String location = rs.getString("Location");
                 String disease = rs.getString("Disease");
-                String deathTollEstimate = rs.getString("DeathTollEstimate");
-                epidemics.add(new Epidemic(name,dateRange,location,disease,deathTollEstimate));
+                int deathTollEstimate = rs.getInt("DeathTollEstimate");
+                epidemics.add(new Epidemic(name,dateRange,startDate,location,disease,deathTollEstimate));
             }
 
             st.close();
@@ -73,7 +74,7 @@ public class DBUtility {
                 String dateRange = rs.getString("DateRange");
                 String location = rs.getString("Location");
                 String disease = rs.getString("Disease");
-                String deathTollEstimate = rs.getString("DeathTollEstimate");
+                int deathTollEstimate = rs.getInt("DeathTollEstimate");
 
                 // print the results
                 System.out.println( id + "  "+  name );
@@ -112,7 +113,7 @@ public class DBUtility {
             ps.setString(2, newEpidemic.getDateRange());
             ps.setString(3, newEpidemic.getLocation());
             ps.setString(4, newEpidemic.getDisease());
-            ps.setString(5, newEpidemic.getDeathToll());
+            ps.setInt(5, newEpidemic.getDeathToll());
             // execute
             ps.executeUpdate();
             // get Id returned
